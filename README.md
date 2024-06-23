@@ -79,6 +79,7 @@ ProjetoEntregaMais/
 │   ├── style.css
 │   ├── style_index.css
 ├── README.md
+├── requirements.txt
 ```
 
 ## Contribuição
