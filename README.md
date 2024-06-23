@@ -1,6 +1,11 @@
 ### Projeto Entrega Mais
 
-Bem-vindo ao projeto **Entrega Mais**! Este é um sistema de gestão de entregas, onde clientes podem cadastrar produtos para serem entregues e entregadores podem pegar esses produtos e realizar as entregas.
+Bem-vindo ao projeto Entrega Mais! 
+Este é um sistema de gestão de entregas, onde clientes podem cadastrar produtos para serem entregues e entregadores podem pegar esses produtos e realizar as entregas.
+
+Este projeto faz parte da iniciativa da Mais1Code, que tem como missão "Reprogramar a Quebrada" através do ensino de tecnologia de qualidade para jovens de baixa renda, ajudando a transformar a realidade das comunidades periféricas.
+
+Mais1Code visa capacitar programadores da quebrada, proporcionando oportunidades de crescimento e desenvolvimento profissional.
 
 ## Funcionalidades
 
