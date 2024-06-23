@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Detalhes do Produto</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='style.css') }}"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <h2>Detalhes do Produto</h2>
+      <p><strong>Código do Produto:</strong> {{ produto.nome }}</p>
+      <p><strong>Descrição:</strong> {{ produto.descricao }}</p>
+      <p><strong>Contato do Cliente:</strong></p>
+      <ul>
+        <li><strong>Nome Completo:</strong> {{ cliente.nome_completo }}</li>
+        <li><strong>Email:</strong> {{ cliente.email }}</li>
+        <li><strong>Telefone:</strong> {{ cliente.telefone }}</li>
+      </ul>
+      <form
+        action="{{ url_for('pegar_produto', produto_id=produto.id) }}"
+        method="POST"
+      >
+        <button type="submit">Voltar</button>
+      </form>
+    </div>
+  </body>
+</html>

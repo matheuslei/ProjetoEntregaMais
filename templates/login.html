@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login - Entregamais</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='style.css') }}"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <a href="\"><img src="static\img\logo.svg" alt="Logo" id="logo" /></a>
+      <h2>Login</h2>
+      {% if current_user.is_authenticated %} {% with messages =
+      get_flashed_messages() %} {% for message in messages %} {% if
+      message.startswith("Credenciais inválidas") %}
+      <p>{{ message }}</p>
+      {% endif %} {% endfor %} {% endwith %} {% endif %}
+      <form method="POST" action="{{ url_for('login') }}">
+        <div>
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email" required />
+        </div>
+        <div>
+          <label for="senha">Senha:</label>
+          <input type="password" id="senha" name="senha" required />
+        </div>
+        <button type="submit">Entrar</button>
+      </form>
+      <p>
+        Não tem uma conta? <a href="{{ url_for('cadastro') }}">Cadastre-se</a>
+      </p>
+      <p>
+        Esqueceu a senha? <br />Entre em contato com nosso suporte:
+        <a href="mailto:suporte@entregamais.com.br"
+          >suporte@entregamais.com.br</a
+        >
+      </p>
+    </div>
+  </body>
+</html>

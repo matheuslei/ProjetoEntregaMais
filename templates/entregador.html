@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard do Entregador</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='style.css') }}"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <img src="static\img\logo.svg" alt="Logo" id="logo" />
+      <h2 class="dashboard-title">Dashboard do Entregador</h2>
+
+      <!-- Lista de produtos disponíveis -->
+      <div>
+        <h3>Produtos Disponíveis</h3>
+        <ul>
+          {% for produto in produtos_disponiveis %}
+          <li>{{ produto.nome }} - {{ produto.descricao }}</li>
+          <form
+            action="{{ url_for('pegar_produto', produto_id=produto.id) }}"
+            method="POST"
+          >
+            <button type="submit">Pegar Produto</button>
+          </form>
+          {% endfor %}
+        </ul>
+      </div>
+
+      <!-- Lista de produtos em pacote -->
+      <div>
+        <h3>Produtos em Pacote</h3>
+        <ul>
+          {% for produto in produtos_pacote %}
+          <li>{{ produto.nome }} - {{ produto.descricao }}</li>
+          <form
+            action="{{ url_for('detalhes_produto', produto_id=produto.id) }}"
+            method="GET"
+          >
+            <button type="submit">Ver Detalhes</button>
+          </form>
+          <form
+            action="{{ url_for('produto_entregue', produto_id=produto.id) }}"
+            method="POST"
+          >
+            <button type="submit">Produto Entregue</button>
+          </form>
+          {% endfor %}
+        </ul>
+      </div>
+
+      <!-- Link para logout -->
+      <div class="logout-container">
+        <form action="{{ url_for('logout') }}" method="POST">
+          <button type="submit" class="logout-button">Logout</button>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>

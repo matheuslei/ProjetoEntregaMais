@@ -1,0 +1,23 @@
+<!-- historico_entregas.html -->
+<img src="static\img\logo.svg" alt="Logo" id="logo" />
+<h2>Histórico de Entregas</h2>
+<table>
+  <thead>
+    <tr>
+      <th>Data de Entrega</th>
+      <th>Produto</th>
+      <th>Status</th>
+      <th>Quantidade</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for entrega in historico_entregas %}
+    <tr>
+      <td>{{ entrega.data_entrega.strftime('%d/%m/%Y %H:%M:%S') }}</td>
+      <td>{{ entrega.produto.nome }}</td>
+      <td>{{ entrega.status }}</td>
+      <td>{{ entrega.quantidade }}</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>

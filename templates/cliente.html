@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard Cliente - Entregamais</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='style.css') }}"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <img src="static\img\logo.svg" alt="Logo" id="logo" />
+      <h2 class="dashboard-title">Dashboard Cliente</h2>
+
+      <!-- Adicionar produto -->
+      <h3>Adicionar Produto</h3>
+      <form method="POST" action="{{ url_for('adicionar_produto') }}">
+        <div>
+          <label for="nome">Código do Produto:</label>
+          <input type="text" id="nome" name="nome" required />
+        </div>
+        <div>
+          <label for="descricao">Descrição:</label>
+          <textarea id="descricao" name="descricao" required></textarea>
+        </div>
+        <button type="submit">Cadastrar Produto</button>
+      </form>
+
+      <!-- Lista de Produtos Cadastrados -->
+      <h3>Meus Produtos</h3>
+      <ul>
+        {% for produto in current_user.produtos %}
+        <li>{{ produto.nome }} - Status: {{ produto.status }}</li>
+        {% endfor %}
+      </ul>
+
+      <p><a href="{{ url_for('login') }}" class="logout-button">Sair</a></p>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,104 @@
+/* static/style.css */
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #000000; /* Preto */
+    color: #FFFFFF; /* Branco */
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* Alinha os itens no topo */
+    padding-top: 50px; /* Aumenta o espaço na parte superior */
+    height: 100vh;
+}
+
+.container {
+    background-color: #333333; /* Cinza escuro para contraste */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 600px;
+    text-align: center;
+}
+
+input[type="text"], input[type="email"], input[type="password"], input[type="tel"], input[type="number"], textarea, select {
+    width: calc(100% - 22px); /* Ajusta a largura do input */
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #555555; /* Cinza médio */
+    color: #FFFFFF; /* Branco */
+    display: block;
+}
+
+input[type="radio"] {
+    margin: 0 5px;
+}
+
+label {
+    display: block;
+    text-align: left; /* Alinha o texto à esquerda */
+    margin-bottom: 5px; /* Espaçamento entre o label e o input */
+}
+
+button {
+    background-color: #FFA500; /* Laranja */
+    color: #000000; /* Preto */
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+}
+
+button:hover {
+    background-color: #FF8C00; /* Laranja mais escuro */
+}
+
+h2, h3 {
+    color: #FFA500; /* Laranja */
+}
+
+h2.dashboard-title {
+    color: #FFFFFF; /* Branco */
+    text-align: left; /* Alinha o título à esquerda */
+}
+
+a {
+    color: #FFA500; /* Laranja */
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+a.logout-button, .logout-button {
+    display: inline-block;
+    background-color: #FFA500; /* Laranja */
+    color: #000000; /* Preto */
+    padding: 10px 20px;
+    border-radius: 4px;
+    text-decoration: none;
+}
+
+a.logout-button:hover, .logout-button:hover {
+    background-color: #FF8C00; /* Laranja mais escuro */
+}
+
+form {
+    text-align: left; /* Alinha o formulário à esquerda */
+    display: block;
+    width: 100%;
+}
+
+.logout-container {
+    text-align: center;
+}
+ul {
+    list-style-type: none; /* Remove as bolinhas padrão */
+}
